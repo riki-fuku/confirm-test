@@ -1,0 +1,50 @@
+.confirm__content {
+    margin: 40px auto;
+    width: 60%;
+}
+
+.confirm__heading {
+    text-align: center;
+}
+
+.confirm-list__inner {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.confirm-list__title {
+    margin: 0;
+    width: 30%;
+}
+
+.confirm-list__text {
+    margin: 0;
+    margin-bottom: 30px;
+    width: 70%;
+}
+
+.form__button {
+    margin: 0 auto;
+    width: 120px;
+}
+
+.form__button-submit {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.page-back {
+    margin-top: 5px;
+    text-align: center;
+}
+.page-back__link {
+    color: #000;
+}

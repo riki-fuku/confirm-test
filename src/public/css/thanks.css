@@ -1,0 +1,21 @@
+.thanks__content {
+    margin: 200px auto;
+}
+
+.thanks__heading {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+
+.thanks__button {
+    display: block;
+    margin: 0 auto;
+    width: 120px;
+    padding: 10px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
