@@ -15,13 +15,12 @@
 }
 
 .confirm-list__title {
-    margin: 0;
+    margin: 0 0 30px;
     width: 30%;
 }
 
 .confirm-list__text {
-    margin: 0;
-    margin-bottom: 30px;
+    margin: 0 0 30px;
     width: 70%;
 }
 

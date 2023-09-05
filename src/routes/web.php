@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ContactController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,18 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-});
-
-Route::get('/confirm', function () {
-    return view('confirm');
-});
-
-Route::get('/thanks', function () {
-    return view('thanks');
-});
+Route::get('/', [ContactController::class, 'index']);
+Route::get('/contacts/search', [ContactController::class, 'search']);
+Route::get('/contacts/register', [ContactController::class, 'register']);
+Route::post('/contacts/confirm', [ContactController::class, 'confirm']);
+Route::post('/contacts', [ContactController::class, 'store']);
+Route::delete('/contacts/delete', [ContactController::class, 'destroy']);

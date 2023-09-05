@@ -8,6 +8,7 @@
     <title>課題テスト</title>
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
     @yield('css')
+    @yield('js')
 </head>
 
 <body>
