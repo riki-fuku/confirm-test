@@ -30,13 +30,16 @@ class ContactController extends Controller
         return view('index', compact('request', 'contacts'));
     }
 
-    public function register()
+    public function register(Request $request)
     {
-        return view('register');
+        $data = $request->session()->get('input_data') ?? [];
+        $request->session()->forget('input_data');
+        return view('register', compact('data'));
     }
 
     public function confirm(ContactRequest $request)
     {
+        $request->session()->put('input_data', $request->all());
         $contact = $request->only(['first_name', 'last_name', 'gender', 'email', 'postcode', 'address', 'building_name', 'opinion']);
         return view('confirm', compact('contact'));
     }
