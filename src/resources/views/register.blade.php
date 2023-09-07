@@ -119,7 +119,7 @@
                         <div class="form__input-postcode--mark">〒</div>
                         <div class="form__input-postcode--item">
                             <input type="text" id="postcode" name="postcode" class="form__input--text"
-                                value="{{ old('postcode', $data['postcode'] ?? '') }}" onChange="searchAddress()">
+                                value="{{ old('postcode', $data['postcode'] ?? '') }}">
                             <div class="form_input--example">例）123-4567</div>
 
                             {{-- エラーメッセージ --}}
