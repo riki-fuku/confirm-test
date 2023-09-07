@@ -48,6 +48,7 @@ class ContactController extends Controller
     {
         $contact = $request->only(['fullname', 'gender', 'email', 'postcode', 'address', 'building_name', 'opinion']);
         Contact::create($contact);
+        $request->session()->forget('input_data');
         return view('thanks');
     }
 

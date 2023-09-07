@@ -28,24 +28,31 @@
                             <input type="text" id="name" name="first_name" class="form__input--text"
                                 value="{{ old('first_name', $data['first_name'] ?? '') }}">
                             <div class="form_input--example">例）山田</div>
+
+                            {{-- エラーメッセージ --}}
+                            <div class="form__error" id="first-name-error">
+                                @error('first_name')
+                                    {{ $message }}
+                                @enderror
+                            </div>
                         </div>
                         <div class="form__input-name--item">
                             <input type="text" name="last_name" class="form__input--text"
                                 value="{{ old('last_name', $data['last_name'] ?? '') }}">
                             <div class="form_input--example">例）太郎</div>
+
+                            {{-- エラーメッセージ --}}
+                            <div class="form__error" id="last-name-error">
+                                @error('last_name')
+                                    {{ $message }}
+                                @enderror
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="form__error">
-                @error('first_name')
-                    {{ $message }}
-                @enderror
-            </div>
-            @error('last_name')
-                {{ $message }}
-            @enderror
+
 
             {{-- 性別 --}}
             <div class="form__group">
@@ -63,14 +70,17 @@
                             <input type="radio" id="radio__women" class="form__input--radio" name="gender" value="2"
                                 {{ old('gender', $data['gender'] ?? '') == 2 ? 'checked' : '' }}>
                             <label for="radio__women" class="form__input--radio-label">女性</label>
+
+                            {{-- エラーメッセージ --}}
+                            <div class="form__error">
+                                @error('gender')
+                                    {{ $message }}
+                                @enderror
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            @error('gender')
-                {{ $message }}
-            @enderror
 
             {{-- メールアドレス --}}
             <div class="form__group">
@@ -85,14 +95,17 @@
                             <input type="email" id="email" name="email" class="form__input--text"
                                 value="{{ old('email', $data['email'] ?? '') }}">
                             <div class="form_input--example">例）test@example.com</div>
+
+                            {{-- エラーメッセージ --}}
+                            <div class="form__error" id="email-error">
+                                @error('email')
+                                    {{ $message }}
+                                @enderror
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            @error('email')
-                {{ $message }}
-            @enderror
 
             {{-- 郵便番号 --}}
             <div class="form__group">
@@ -106,16 +119,19 @@
                         <div class="form__input-postcode--mark">〒</div>
                         <div class="form__input-postcode--item">
                             <input type="text" id="postcode" name="postcode" class="form__input--text"
-                                value="{{ old('postcode', $data['postcode'] ?? '') }}">
+                                value="{{ old('postcode', $data['postcode'] ?? '') }}" onChange="searchAddress()">
                             <div class="form_input--example">例）123-4567</div>
+
+                            {{-- エラーメッセージ --}}
+                            <div class="form__error" id="postcode-error">
+                                @error('postcode')
+                                    {{ $message }}
+                                @enderror
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            @error('postcode')
-                {{ $message }}
-            @enderror
 
             {{-- 住所 --}}
             <div class="form__group">
@@ -130,14 +146,17 @@
                             <input type="text" id="address" name="address" class="form__input--text"
                                 value="{{ old('address', $data['gender'] ?? '') }}">
                             <div class="form_input--example">例）東京都渋谷区千駄ケ谷1-2-3</div>
+
+                            {{-- エラーメッセージ --}}
+                            <div class="form__error" id="address-error">
+                                @error('address')
+                                    {{ $message }}
+                                @enderror
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            @error('address')
-                {{ $message }}
-            @enderror
 
             {{-- 建物名 --}}
             <div class="form__group">
@@ -151,14 +170,17 @@
                             <input type="text" id="building_name" name="building_name" class="form__input--text"
                                 value="{{ old('building_name', $data['building_name'] ?? '') }}">
                             <div class="form_input--example">例）千駄ヶ谷マンション101</div>
+
+                            {{-- エラーメッセージ --}}
+                            <div class="form__error" id="opinions-error">
+                                @error('building_name')
+                                    {{ $message }}
+                                @enderror
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            @error('building_name')
-                {{ $message }}
-            @enderror
 
             {{-- ご意見 --}}
             <div class="form__group">
@@ -171,14 +193,17 @@
                     <div class="form__input-opinion">
                         <div class="form__input-opinion--item">
                             <textarea name="opinion" id="opinion" class="form__textarea" maxlength="120">{{ old('opinion', $data['opinion'] ?? '') }}</textarea>
+
+                            {{-- エラーメッセージ --}}
+                            <div class="form__error" id="opinion-error">
+                                @error('opinion')
+                                    {{ $message }}
+                                @enderror
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            @error('opinion')
-                {{ $message }}
-            @enderror
 
             <div class="form__button">
                 <button class="form__button-submit">確認</button>
